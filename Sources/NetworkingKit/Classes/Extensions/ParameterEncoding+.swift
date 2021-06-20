@@ -1,9 +1,7 @@
 import Alamofire
 import Foundation
 
-///
 public extension ParameterEncoding {
-    ///
     static var urlEncodedFormParameter: ParameterEncoding {
         .urlEncodedFormParameter()
     }

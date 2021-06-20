@@ -2,6 +2,16 @@ import Alamofire
 import Foundation
 
 open class OAuthSession<Authenticator: OAuthAuthentificator>: Session {
+    /// Create a new instance of `OAuthSession`.
+    ///
+    /// - Parameters:
+    ///   - configuration: A configuration object that defines behavior and policies for a URL session.
+    ///   - baseURL: The base url to resource.
+    ///   - responseDecoder: Any type which can decode Data into a Decodable type.
+    ///   - parameterEncoding: Parameter encoding strategy.
+    ///   - authentificator: Types adopting the `Authenticator` protocol can be used to authenticate `URLRequest`s with an
+    /// `AuthenticationCredential` as well as refresh the `AuthenticationCredential` when required.
+    ///   - credential: The type of credential associated with the `Authenticator` instance.
     public required init(
         configuration: URLSessionConfiguration = .default,
         baseURL: URL? = nil,

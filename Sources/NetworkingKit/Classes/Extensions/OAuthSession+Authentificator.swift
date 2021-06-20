@@ -1,7 +1,6 @@
 import Alamofire
 import Foundation
 
-///
 extension OAuthSession: Alamofire.Authenticator {
     public func apply(_ credential: Authenticator.Credential, to urlRequest: inout URLRequest) {
         authentificator.apply(credential, to: &urlRequest)
