@@ -31,7 +31,7 @@ public extension Requestable {
         nil
     }
 
-    var parametersEncoding: ParameterEncoding? {
+    var parameterEncoding: ParameterEncoding? {
         nil
     }
 }
