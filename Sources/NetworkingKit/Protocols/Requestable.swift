@@ -58,7 +58,9 @@ extension Requestable {
             request.headers = .init(headers)
         }
 
-        try (self.parameterEncoding ?? parameterEncoding).encode(parameters, into: &request)
+        if let parameters = parameters {
+            try (self.parameterEncoding ?? parameterEncoding).encode(parameters, into: &request)
+        }
 
         return request
     }
