@@ -1,7 +1,7 @@
 import Alamofire
 import Foundation
 
-public class Request<Requstable: Requestable>: RequestProtocol {
+public class Request<Requstable: TargetType>: RequestProtocol {
     init(requestable: Requstable) {
         self.requestable = requestable
     }

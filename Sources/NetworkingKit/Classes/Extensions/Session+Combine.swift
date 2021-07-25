@@ -1,14 +1,14 @@
 import Combine
 
 extension Session {
-    public typealias RequestResult<T: Requestable> = AnyPublisher<T.Response, Error>
+    public typealias RequestResult<T: Decodable> = AnyPublisher<T, Error>
 
     @discardableResult
-    open func request<T: Requestable>(_ request: T, credential: Credential? = nil) -> RequestResult<T> {
-        var _request: Request<T>?
+    open func request<T: Decodable>(_ type: T.Type, _ request: Target, credential: Credential? = nil) -> RequestResult<T> {
+        var _request: Request<Target>?
 
         return Future { promise in
-            _request = self.request(request, credential: credential) { response in
+            _request = self.request(type, target: request, credential: credential) { response in
                 switch response.result {
                 case let .success(data):
                     promise(.success(data))

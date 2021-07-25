@@ -3,7 +3,7 @@ import Foundation
 
 /// The protocol describing a request.
 public protocol RequestProtocol {
-    associatedtype Requestable: NetworkingKit.Requestable
+    associatedtype Requestable: NetworkingKit.TargetType
     
     /// A ``Requestable`` value that contains the initial request.
     var requestable: Requestable { get }
